@@ -3,7 +3,7 @@
 ## Latest Firmware Release
 v1.0 - Original release
 
-## Description
+## Product Description
 The SparkFun OpenScale-IoT is a configureable device for reading and configuring load cells.
 Please consider supporting SparkFun by buying a product or kit:
 * [SparkFun OpenScale-IoT](https://www.sparkfun.com/sparkfun-openscale-iot.html)
