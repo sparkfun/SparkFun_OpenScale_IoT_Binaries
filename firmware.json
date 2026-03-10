@@ -1,8 +1,8 @@
 {
   "Configurations": [
     {
-      "Version": "2.0.0",
-      "URL":"https://raw.githubusercontent.com/sparkfun/SparkFun_OpenScale_IoT_Binaries/master/Openscale-IoT.ino.bin
+      "Version": "1.1.0",
+      "URL": "https://raw.githubusercontent.com/sparkfun/SparkFun_OpenScale_IoT_Binaries/main/OpenScale-IoT.ino.bin"
     }
   ]
 }
