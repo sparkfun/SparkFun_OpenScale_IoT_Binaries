@@ -18,29 +18,33 @@ Included in this repository are two binaries:
 1. "OpenScale-IoT.ino.bin"
 2. "OpenScale-IoT.ino.merged.bin" 
 
-The first is the binary that includes the firmware for the SparkFun OpenScale-IoT. The second binary includes the memory partitions *in addition* to the firmware. 
+The first binary includes the firmware for the SparkFun OpenScale-IoT. The second binary includes the memory partitions *in addition* to the firmware. 
 Use the second "merged" binary when the memory partitions are set to anything but 
 a default 8MB partition scheme. If you've never touched the partition scheme, then use the second binary.
 
 ## How to Upload
 
-Uploading raw binaries to an ESP32 requires either the Arduino's [arduino-cli](https://docs.arduino.cc/arduino-cli/) or Espressif's [esptool](https://docs.espressif.com/projects/esptool/en/latest/esp32/). First download the repository and navigate to the folder in which they are downloaded. 
+Uploading raw binaries to an ESP32 requires either the Arduino's [arduino-cli](https://docs.arduino.cc/arduino-cli/) tool or Espressif's [esptool](https://docs.espressif.com/projects/esptool/en/latest/esp32/). First download the repository and navigate to the folder where they are downloaded. 
 
 ### Using arduino-cli
 In the background the arduino-cli is utilizing esptool. Ensure that you have **version 3.2** of the ESP32 core file. To roll back your version or install **version 3.2** simply run the command: 
 
-`arduino-cli core install esp32:esp32@3.2`
+```bash
+arduino-cli core install esp32:esp32@3.2
+```
 
 Now upload the binary, making sure to modify `>YOUR_PORT<` with your COM port. On Linux this may be something like `/dev/ttyUSB0` on Windows `COM3`.
-
-`arduino-cli upload -i OpenScale-IoT.ino.bin -p >YOUR_PORT< -b esp32:esp32:esp32`
-
+```bash
+arduino-cli upload -i OpenScale-IoT.ino.bin -p >YOUR_PORT< -b esp32:esp32:esp32
+```
 
 ### Using esptool directly. 
 
 Navigate to the location where `esptool.py` lives and run the following command. Make sure to update `>YOUR_PORT<` with your COM port. On Linux this may be something like `/dev/ttyUSB0` on Windows `COM3`.
 
-`python -m esptool.py --chip esp32 -p >YOUR_PORT< -b 921600 write_flash 0x0 />PATH_TO_BINARY</OpenScale-IoT.ino.merged.bin`
+```bash
+python -m esptool.py --chip esp32 -p >YOUR_PORT< -b 921600 write_flash 0x0 />PATH_TO_BINARY</OpenScale-IoT.ino.merged.bin
+```
 
 License Information
 -------------------
